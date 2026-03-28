@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chloe's Week 1 Playbook — Bloom Soft Co.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sky: #B9D7F2; --gold: #C3A564; --navy: #323F5A;
+            --pink: #F5B9C8; --sage: #A5C6B2; --cream: #F8FBFF;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--navy); line-height: 1.7; }
+
+        .header {
+            background: linear-gradient(135deg, var(--pink) 0%, var(--sky) 50%, var(--sage) 100%);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+        }
+        .header h1 { font-family: 'Lora', serif; font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .header p { font-size: 0.95rem; opacity: 0.85; max-width: 450px; margin: 0 auto; }
+
+        .container { max-width: 700px; margin: 0 auto; padding: 1.5rem; }
+
+        /* PROGRESS */
+        .progress-wrap { margin: 1.5rem 0; }
+        .progress-bar { background: #E8E0D8; border-radius: 20px; height: 14px; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--pink), var(--sage)); border-radius: 20px; transition: width 0.5s; width: 0%; }
+        .progress-label { text-align: center; font-size: 0.85rem; color: #64748B; margin-top: 0.5rem; }
+
+        /* DAY CARDS */
+        .day {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 10px rgba(50,63,90,0.06);
+            border-left: 5px solid var(--sky);
+            transition: opacity 0.3s;
+        }
+        .day.complete { opacity: 0.5; border-left-color: var(--sage); }
+        .day h2 {
+            font-family: 'Lora', serif;
+            font-size: 1.15rem;
+            color: var(--gold);
+            margin-bottom: 0.25rem;
+        }
+        .day .date { font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem; }
+
+        .task {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+        }
+        .task input[type="checkbox"] {
+            width: 20px; height: 20px; margin-top: 2px;
+            accent-color: var(--sage); flex-shrink: 0;
+        }
+        .task span { font-size: 0.95rem; }
+
+        .milestone {
+            background: linear-gradient(135deg, rgba(245,185,200,0.1), rgba(165,198,178,0.1));
+            border: 1px solid rgba(195,165,100,0.3);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+        .milestone strong { color: var(--gold); }
+
+        .tip {
+            background: rgba(185,215,242,0.15);
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            font-size: 0.85rem;
+            color: var(--navy);
+            margin-top: 0.75rem;
+        }
+        .tip::before { content: "Tip: "; font-weight: 600; color: var(--gold); }
+
+        .final-card {
+            background: linear-gradient(135deg, var(--pink), var(--sky));
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            display: none;
+        }
+        .final-card h2 { font-family: 'Lora', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 0.75rem; }
+        .final-card p { color: var(--navy); font-size: 1rem; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Your First Week</h1>
+    <p>Your shop is live. Here's exactly what to do for the next 7 days. One day at a time.</p>
+</div>
+
+<div class="container">
+
+<div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="pFill"></div></div>
+    <div class="progress-label" id="pLabel">0 of 24 tasks done</div>
+</div>
+
+<!-- DAY 0 -->
+<div class="day" id="day0">
+    <h2>Day 0 — Launch Night</h2>
+    <div class="date">March 28, 2026</div>
+
+    <div class="task"><input type="checkbox" class="cb" data-day="0"><span>All 6 listings are published and visible on Etsy</span></div>
+    <div class="task"><input type="checkbox" class="cb" data-day="0"><span>Etsy Ads turned on at $5/day</span></div>
+    <div class="task"><input type="checkbox" class="cb" data-day="0"><span>Share your shop link with 3 people you trust</span></div>
+    <div class="task"><input type="checkbox" class="cb" data-day="0"><span>Post your first TikTok (use the scripts file on your phone)</span></div>
+    <div class="task"><input type="checkbox" class="cb" data-day="0"><span>Search "general conference journal 2026" on Etsy — can you find your listing?</span></div>
+
+    <div class="milestone"><strong>You just launched a business.</strong> That's not a small thing. Breathe. You did it.</div>
+</div>
+
+<!-- DAY 1 -->
+<div class="day" id="day1">
+    <h2>Day 1 — First Morning</h2>
+    <div class="date">March 29, 2026</div>
+
+    <div class="task"><input type="checkbox" class="cb" data-day="1"><span>Check Etsy stats: how many views? How many favorites?</span></div>
+    <div class="task"><input type="checkbox" class="cb" data-day="1"><span>Reply to any messages within 2 hours (this matters for Star Seller)</span></div>
+    <div class="task"><input type="checkbox" class="cb" data-day="1"><span>Share in one more group chat or social media post</span></div>
+    <div class="task"><input type="checkbox" class="cb" data-day="1"><span>Check that all digital files download correctly (test-buy one yourself if needed)</span></div>
+
+    <div class="tip">Views and favorites matter more than sales right now. Etsy is learning who to show your products to. Every view teaches the algorithm.</div>
+
+    <div class="milestone"><strong>First views = first proof.</strong> Real people are looking at something you made.</div>
+</div>
+
+<!-- DAY 2-3 -->
+<div class="day" id="day2">
+    <h2>Days 2-3 — Conference Weekend</h2>
+    <div class="date">March 30-31, 2026</div>
+
+    <div class="task"><input type="checkbox" class="cb" data-day="2"><span>Check stats in the morning (views, favorites, any sales)</span></div>
+    <div class="task"><input type="checkbox" class="cb" data-day="2"><span>Post 1 TikTok per day — show the products being used during Conference</span></div>
+    <div class="task"><input type="checkbox" class="cb" data-day="2"><span>Reply to ALL buyer messages within 2 hours</span></div>
+    <div class="task"><input type="checkbox" class="cb" data-day="2"><span>Check stats again in the evening</span></div>
+    <div class="task"><input type="checkbox" class="cb" data-day="2"><span>If you got a sale: do a happy dance. Then send a thank-you message to the buyer.</span></div>
+
+    <div class="tip">Don't panic if sales are slow. Conference weekend means people are BUSY — they'll search for printables before and after the sessions. Your job is to be there when they look.</div>
+
+    <div class="milestone"><strong>Conference weekend survived.</strong> Whether you got 0 sales or 10, you showed up. That's what matters.</div>
+</div>
+
+<!-- DAY 4-5 -->
+<div class="day" id="day3">
+    <h2>Days 4-5 — Read the Data</h2>
+    <div class="date">April 1-2, 2026</div>
+
+    <div class="task"><input type="checkbox" class="cb" data-day="3"><span>Go to Shop Manager → Stats. Write down: total views, total favorites, total orders</span></div>
+    <div class="task"><input type="checkbox" class="cb" data-day="3"><span>Which listing got the MOST views? That's your winner.</span></div>
+    <div class="task"><input type="checkbox" class="cb" data-day="3"><span>Which listing got the LEAST views? Think about why — title? thumbnail?</span></div>
+    <div class="task"><input type="checkbox" class="cb" data-day="3"><span>Check Etsy Ads: Marketing → Etsy Ads → see which products are getting clicks</span></div>
+    <div class="task"><input type="checkbox" class="cb" data-day="3"><span>If any ad has less than 1% click rate after 5 days, turn it off for that product</span></div>
+
+    <div class="tip">Data tells you what's working. Don't guess — look at the numbers. The product with the most views is the one Etsy thinks people want. Listen to that signal.</div>
+
+    <div class="milestone"><strong>You just read real business data.</strong> Most adults never get this far. You're analyzing your own metrics at 16.</div>
+</div>
+
+<!-- DAY 6-7 -->
+<div class="day" id="day4">
+    <h2>Days 6-7 — Your First Week Recap</h2>
+    <div class="date">April 3-4, 2026</div>
+
+    <div class="task"><input type="checkbox" class="cb" data-day="4"><span>Write down your Week 1 numbers: total views, favorites, orders, revenue</span></div>
+    <div class="task"><input type="checkbox" class="cb" data-day="4"><span>Ask yourself: what's one thing I'd do differently next time?</span></div>
+    <div class="task"><input type="checkbox" class="cb" data-day="4"><span>If you got any reviews, read them. Screenshot the good ones.</span></div>
+    <div class="task"><input type="checkbox" class="cb" data-day="4"><span>Plan what to list next — the Gemini prompts file has 41 more products ready to generate</span></div>
+    <div class="task"><input type="checkbox" class="cb" data-day="4"><span>Celebrate. Seriously. Tell someone what you built this week.</span></div>
+
+    <div class="tip">Week 1 is about learning, not earning. If you got even 1 sale, you proved the model works. If you got 0 sales but 50+ views, the traffic is there — it just needs time to convert.</div>
+
+    <div class="milestone"><strong>Week 1 complete.</strong> You launched a brand, published products, ran ads, read data, and learned more about business than most people learn in a semester. This is just the beginning.</div>
+</div>
+
+<!-- CELEBRATION -->
+<div class="final-card" id="celebrate">
+    <h2>You survived Week 1.</h2>
+    <p>Bloom Soft Co. is real. You made it real. Whatever happens next — more products, more sales, more TikToks — you already did the hardest part: you started. The 41 Gemini prompts are ready whenever you are.</p>
+</div>
+
+</div>
+
+<script>
+const cbs = document.querySelectorAll('.cb');
+const total = cbs.length;
+
+function update() {
+    let done = 0;
+    const dayCounts = {};
+    const dayTotals = {};
+
+    cbs.forEach(cb => {
+        const d = cb.dataset.day;
+        dayTotals[d] = (dayTotals[d] || 0) + 1;
+        if (cb.checked) { done++; dayCounts[d] = (dayCounts[d] || 0) + 1; }
+    });
+
+    const pct = Math.round((done / total) * 100);
+    document.getElementById('pFill').style.width = pct + '%';
+    document.getElementById('pLabel').textContent = done + ' of ' + total + ' tasks done';
+
+    ['day0','day1','day2','day3','day4'].forEach((id, i) => {
+        const el = document.getElementById(id);
+        if (dayCounts[i] === dayTotals[i]) el.classList.add('complete');
+        else el.classList.remove('complete');
+    });
+
+    document.getElementById('celebrate').style.display = (done === total) ? 'block' : 'none';
+}
+
+cbs.forEach((cb, i) => {
+    const k = 'chloe-week1-' + i;
+    cb.checked = localStorage.getItem(k) === 'true';
+    cb.addEventListener('change', () => { localStorage.setItem(k, cb.checked); update(); });
+});
+update();
+</script>
+
+</body>
+</html>

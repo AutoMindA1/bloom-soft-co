@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom Soft Co. — GTM Sprint Plan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --brand-white: #F8FBFF;
+            --sky-blue: #B9D7F2;
+            --warm-gold: #C3A564;
+            --deep-navy: #323F5A;
+            --sage-green: #A5C6B2;
+            --blush-pink: #F5B9C8;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--brand-white);
+            color: var(--deep-navy);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Lora', serif;
+            color: var(--deep-navy);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--warm-gold);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, var(--sky-blue) 0%, rgba(185, 215, 242, 0.5) 100%);
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(185, 215, 242, 0.2);
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: var(--deep-navy);
+            margin-bottom: 1.5rem;
+        }
+
+        .header-meta {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-item strong {
+            color: var(--warm-gold);
+        }
+
+        /* PROGRESS BAR */
+        .progress-section {
+            margin-bottom: 2rem;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--deep-navy);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background-color: rgba(185, 215, 242, 0.3);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--sage-green), var(--warm-gold));
+            transition: width 0.4s ease;
+            border-radius: 6px;
+        }
+
+        /* CARDS & SECTIONS */
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(50, 63, 90, 0.08);
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--sky-blue);
+        }
+
+        .card.featured {
+            border-left-color: var(--warm-gold);
+            background: linear-gradient(135deg, rgba(195, 165, 100, 0.05) 0%, white 100%);
+        }
+
+        /* REVENUE TABLE */
+        .revenue-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+        }
+
+        .revenue-table th {
+            background-color: var(--warm-gold);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .revenue-table td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(185, 215, 242, 0.3);
+        }
+
+        .revenue-table tr:hover {
+            background-color: rgba(185, 215, 242, 0.1);
+        }
+
+        .scenario-name {
+            font-weight: 600;
+            color: var(--deep-navy);
+        }
+
+        .metric {
+            font-family: 'Courier New', monospace;
+            color: var(--warm-gold);
+        }
+
+        /* PRODUCT PIPELINE CARDS */
+        .pipeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .pipeline-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(50, 63, 90, 0.08);
+            border-top: 4px solid var(--sky-blue);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .pipeline-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(50, 63, 90, 0.12);
+        }
+
+        .pipeline-card h4 {
+            color: var(--warm-gold);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .pipeline-card p {
+            font-size: 0.9rem;
+            color: var(--deep-navy);
+            margin-bottom: 1rem;
+        }
+
+        .count {
+            display: inline-block;
+            background-color: var(--sage-green);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        /* SPRINT CHECKLIST */
+        .day-section {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(50, 63, 90, 0.08);
+        }
+
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--sky-blue);
+        }
+
+        .day-title {
+            font-family: 'Lora', serif;
+            font-size: 1.3rem;
+            color: var(--warm-gold);
+        }
+
+        .day-date {
+            font-size: 0.9rem;
+            color: var(--deep-navy);
+            opacity: 0.7;
+        }
+
+        .day-progress {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--sage-green);
+        }
+
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 0.75rem 0;
+            gap: 0.75rem;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .checklist-item:hover {
+            opacity: 0.8;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            cursor: pointer;
+            accent-color: var(--sage-green);
+        }
+
+        .checklist-item label {
+            flex-grow: 1;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .checklist-item input[type="checkbox"]:checked + label {
+            text-decoration: line-through;
+            color: var(--deep-navy);
+            opacity: 0.6;
+        }
+
+        /* CONTENT CALENDAR */
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .calendar-week {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(50, 63, 90, 0.08);
+            border-top: 4px solid var(--sky-blue);
+        }
+
+        .calendar-week h4 {
+            color: var(--warm-gold);
+            margin-bottom: 1rem;
+            font-family: 'Lora', serif;
+        }
+
+        .calendar-week ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .calendar-week li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.9rem;
+            color: var(--deep-navy);
+        }
+
+        .calendar-week li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--warm-gold);
+            font-weight: bold;
+        }
+
+        /* PLATFORM SETUP */
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .platform-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(50, 63, 90, 0.08);
+        }
+
+        .platform-card h4 {
+            color: var(--warm-gold);
+            margin-bottom: 1rem;
+            font-family: 'Lora', serif;
+        }
+
+        .platform-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .platform-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.9rem;
+            color: var(--deep-navy);
+        }
+
+        .platform-card li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--sky-blue);
+            font-weight: bold;
+        }
+
+        /* METRICS DASHBOARD */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .metric-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(50, 63, 90, 0.08);
+            text-align: center;
+            border-top: 4px solid var(--sky-blue);
+        }
+
+        .metric-card h4 {
+            color: var(--deep-navy);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .metric-value {
+            font-family: 'Courier New', monospace;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--warm-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-note {
+            font-size: 0.8rem;
+            color: var(--deep-navy);
+            opacity: 0.7;
+        }
+
+        /* ALERTS */
+        .alert {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .alert.urgent {
+            background-color: rgba(245, 185, 200, 0.2);
+            border-left: 4px solid var(--blush-pink);
+            color: var(--deep-navy);
+        }
+
+        .alert.success {
+            background-color: rgba(165, 198, 178, 0.2);
+            border-left: 4px solid var(--sage-green);
+            color: var(--deep-navy);
+        }
+
+        .alert-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .alert-content p {
+            margin-bottom: 0.5rem;
+        }
+
+        .alert-content strong {
+            color: var(--warm-gold);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--deep-navy);
+            opacity: 0.7;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(185, 215, 242, 0.3);
+            margin-top: 3rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            .header-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .pipeline-grid,
+            .calendar-grid,
+            .platform-grid,
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* PRINT */
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            .progress-section,
+            .alert {
+                page-break-inside: avoid;
+            }
+
+            .day-section,
+            .card {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <h1>Bloom Soft Co.</h1>
+            <p>Go-To-Market Sprint Plan — AI Art Business Launch</p>
+            <div class="header-meta">
+                <div class="meta-item">
+                    <strong>Timeline</strong>
+                    <span>7 days (March 28 — April 3)</span>
+                </div>
+                <div class="meta-item">
+                    <strong>Target Revenue</strong>
+                    <span>$1,999 in 30 days</span>
+                </div>
+                <div class="meta-item">
+                    <strong>Goal</strong>
+                    <span>MacBook Pro before General Conference (April 4–5)</span>
+                </div>
+                <div class="meta-item">
+                    <strong>Launch Target</strong>
+                    <span>50+ SKUs across 2 platforms</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- ALERTS -->
+        <div class="alert urgent">
+            <div class="alert-icon">⚡</div>
+            <div class="alert-content">
+                <p><strong>Critical Path:</strong> TikTok is the swing factor. The "13-year-old entrepreneur" angle + AI art + cottagecore aesthetic is a triple-threat niche. Viral TikTok can 5x projected revenue.</p>
+            </div>
+        </div>
+
+        <!-- PROGRESS BAR -->
+        <div class="progress-section">
+            <div class="progress-label">
+                <span>Sprint Completion: Day 1</span>
+                <span id="progressPercent">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
+            </div>
+        </div>
+
+        <!-- SECTION 1: REVENUE MODEL -->
+        <section class="section">
+            <h2>Revenue Model — 30-Day Projections</h2>
+            <div class="card featured">
+                <p>Target: <strong>$1,999 in 30 days</strong> (Net after fees). The MacBook Pro goal requires hitting at least the <strong>Moderate</strong> scenario.</p>
+            </div>
+            <div style="overflow-x: auto;">
+                <table class="revenue-table">
+                    <thead>
+                        <tr>
+                            <th>Scenario</th>
+                            <th>Platform Mix</th>
+                            <th>Daily Views</th>
+                            <th>Conversion</th>
+                            <th>Avg Net/Sale</th>
+                            <th>30-Day Revenue (Low)</th>
+                            <th>30-Day Revenue (High)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="scenario-name">Conservative</span></td>
+                            <td>Etsy organic only</td>
+                            <td>5–20</td>
+                            <td>2–3%</td>
+                            <td><span class="metric">$5.50</span></td>
+                            <td><span class="metric">$165</span></td>
+                            <td><span class="metric">$495</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="scenario-name">Moderate</span></td>
+                            <td>Etsy + Pinterest + light social</td>
+                            <td>50–100</td>
+                            <td>3%</td>
+                            <td><span class="metric">$6.00</span></td>
+                            <td><span class="metric">$810</span></td>
+                            <td><span class="metric">$1,620</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="scenario-name">Aggressive</span></td>
+                            <td>Etsy + TikTok viral multiplier</td>
+                            <td>200–500</td>
+                            <td>4%</td>
+                            <td><span class="metric">$6.50</span></td>
+                            <td><span class="metric">$2,340</span></td>
+                            <td><span class="metric">$5,850</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card">
+                <h3>Fee Structure</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li><strong>Etsy:</strong> $0.20/listing + 6.5% transaction fee + 3% payment processing = ~9.7% total</li>
+                    <li><strong>Redbubble:</strong> Print-on-demand (no upfront; revenue share ~20–50% depending on product)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 2: PRODUCT PIPELINE -->
+        <section class="section">
+            <h2>Product Pipeline — 50+ SKUs Target</h2>
+            <div class="card featured">
+                <p>Must ship <strong>47 individual designs + 6 bundles = 53 total listings</strong> before General Conference (April 4–5).</p>
+            </div>
+            <div class="pipeline-grid">
+                <div class="pipeline-card">
+                    <h4>Animals with Flower Crowns</h4>
+                    <p>Bunny, cat, dog, hedgehog, fawn, fox, deer</p>
+                    <p><span class="count">14 listings</span> (7 animals × 2 versions)</p>
+                </div>
+                <div class="pipeline-card">
+                    <h4>Fashion × Nature</h4>
+                    <p>Handbag, pearls, perfume, sunglasses, silk scarf</p>
+                    <p><span class="count">5 listings</span></p>
+                </div>
+                <div class="pipeline-card">
+                    <h4>Pure Botanical</h4>
+                    <p>Various color/mood variants — florals, wildflowers</p>
+                    <p><span class="count">6 listings</span></p>
+                </div>
+                <div class="pipeline-card">
+                    <h4>Easter/Spring Seasonal</h4>
+                    <p>Animals + botanical with Easter elements</p>
+                    <p><span class="count">6 listings</span> (3 prompts exist)</p>
+                </div>
+                <div class="pipeline-card">
+                    <h4>Phone Wallpapers</h4>
+                    <p>Phone-optimized versions of top sellers</p>
+                    <p><span class="count">10 listings</span></p>
+                </div>
+                <div class="pipeline-card">
+                    <h4>Bundles (5-pack & 3-pack)</h4>
+                    <p>Grouped wallpaper sets for higher AOV</p>
+                    <p><span class="count">6 listings</span></p>
+                </div>
+            </div>
+            <div class="card">
+                <p><strong>Total:</strong> 47 individual + 6 bundles = <strong>53 listings</strong> | <strong>Existing:</strong> 6 wallpapers</p>
+            </div>
+        </section>
+
+        <!-- SECTION 3: 7-DAY SPRINT CHECKLIST -->
+        <section class="section">
+            <h2>7-Day Sprint Checklist</h2>
+
+            <!-- DAY 1 -->
+            <div class="day-section">
+                <div class="day-header">
+                    <div>
+                        <div class="day-title">Day 1: Saturday, March 28</div>
+                        <div class="day-date">TODAY — Account & First Uploads</div>
+                    </div>
+                    <div class="day-progress" id="day1-progress">0/8 tasks</div>
+                </div>
+                <ul class="checklist" id="day1-checklist">
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d1t1" onchange="updateProgress()">
+                        <label for="d1t1">Create Etsy account (under Caleb's name — must be 18+)</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d1t2" onchange="updateProgress()">
+                        <label for="d1t2">Set up Etsy shop: name "Bloom Soft Co.", upload logo, write About section</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d1t3" onchange="updateProgress()">
+                        <label for="d1t3">Create Redbubble account (same)</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d1t4" onchange="updateProgress()">
+                        <label for="d1t4">Upload existing 6 wallpapers as first listings</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d1t5" onchange="updateProgress()">
+                        <label for="d1t5">Generate first batch of 10 new designs in Imagen 3</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d1t6" onchange="updateProgress()">
+                        <label for="d1t6">Write listings for first 10 using commerce skill</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d1t7" onchange="updateProgress()">
+                        <label for="d1t7">Upload all 10 listings to Etsy</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d1t8" onchange="updateProgress()">
+                        <label for="d1t8">Set up basic Redbubble product uploads</label>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- DAY 2 -->
+            <div class="day-section">
+                <div class="day-header">
+                    <div>
+                        <div class="day-title">Day 2: Sunday, March 29</div>
+                        <div class="day-date">Design Expansion + Social Launch</div>
+                    </div>
+                    <div class="day-progress" id="day2-progress">0/6 tasks</div>
+                </div>
+                <ul class="checklist" id="day2-checklist">
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d2t1" onchange="updateProgress()">
+                        <label for="d2t1">Generate 10 more designs (animal series expansion)</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d2t2" onchange="updateProgress()">
+                        <label for="d2t2">Write and upload all 10 listings to Etsy</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d2t3" onchange="updateProgress()">
+                        <label for="d2t3">Create TikTok account (@bloomsoftco)</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d2t4" onchange="updateProgress()">
+                        <label for="d2t4">Create Instagram account (@bloomsoftco)</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d2t5" onchange="updateProgress()">
+                        <label for="d2t5">Create Pinterest business account</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d2t6" onchange="updateProgress()">
+                        <label for="d2t6">Film first TikTok: "I'm 13 and I started an AI art business" (viral hook)</label>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- DAY 3 -->
+            <div class="day-section">
+                <div class="day-header">
+                    <div>
+                        <div class="day-title">Day 3: Monday, March 30</div>
+                        <div class="day-date">Design Push + Pinterest Setup</div>
+                    </div>
+                    <div class="day-progress" id="day3-progress">0/5 tasks</div>
+                </div>
+                <ul class="checklist" id="day3-checklist">
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d3t1" onchange="updateProgress()">
+                        <label for="d3t1">Generate 10 Fashion × Nature + Pure Botanical designs</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d3t2" onchange="updateProgress()">
+                        <label for="d3t2">Write and upload all listings to Etsy</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d3t3" onchange="updateProgress()">
+                        <label for="d3t3">Post TikTok #2: design process reveal</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d3t4" onchange="updateProgress()">
+                        <label for="d3t4">Set up Pinterest boards (Wildflower Art, Cottagecore, Phone Wallpapers)</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d3t5" onchange="updateProgress()">
+                        <label for="d3t5">Pin all existing listings to Pinterest</label>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- DAY 4 -->
+            <div class="day-section">
+                <div class="day-header">
+                    <div>
+                        <div class="day-title">Day 4: Tuesday, March 31</div>
+                        <div class="day-date">Easter/Spring + Bundle Launch</div>
+                    </div>
+                    <div class="day-progress" id="day4-progress">0/5 tasks</div>
+                </div>
+                <ul class="checklist" id="day4-checklist">
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d4t1" onchange="updateProgress()">
+                        <label for="d4t1">Generate Easter/Spring seasonal designs (6)</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d4t2" onchange="updateProgress()">
+                        <label for="d4t2">Write and upload seasonal listings to Etsy</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d4t3" onchange="updateProgress()">
+                        <label for="d4t3">Create 3 bundle listings (5-pack wall art sets)</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d4t4" onchange="updateProgress()">
+                        <label for="d4t4">TikTok #3: "Which one is your favorite?" engagement post</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d4t5" onchange="updateProgress()">
+                        <label for="d4t5">Instagram grid: first 9 posts for aesthetic grid</label>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- DAY 5 -->
+            <div class="day-section">
+                <div class="day-header">
+                    <div>
+                        <div class="day-title">Day 5: Wednesday, April 1</div>
+                        <div class="day-date">Phone Wallpapers + Bundle Expansion</div>
+                    </div>
+                    <div class="day-progress" id="day5-progress">0/5 tasks</div>
+                </div>
+                <ul class="checklist" id="day5-checklist">
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d5t1" onchange="updateProgress()">
+                        <label for="d5t1">Generate phone wallpaper variants (10)</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d5t2" onchange="updateProgress()">
+                        <label for="d5t2">Write and upload phone wallpaper listings to Etsy</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d5t3" onchange="updateProgress()">
+                        <label for="d5t3">Create 3 more bundle listings (3-pack sets)</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d5t4" onchange="updateProgress()">
+                        <label for="d5t4">TikTok #4: room mockup / "POV: you decorate with AI art"</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d5t5" onchange="updateProgress()">
+                        <label for="d5t5">Pin all new listings to Pinterest</label>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- DAY 6 -->
+            <div class="day-section">
+                <div class="day-header">
+                    <div>
+                        <div class="day-title">Day 6: Thursday, April 2</div>
+                        <div class="day-date">SEO Audit + Optimization</div>
+                    </div>
+                    <div class="day-progress" id="day6-progress">0/5 tasks</div>
+                </div>
+                <ul class="checklist" id="day6-checklist">
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d6t1" onchange="updateProgress()">
+                        <label for="d6t1">Audit all 50+ listings for SEO (titles, tags, descriptions)</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d6t2" onchange="updateProgress()">
+                        <label for="d6t2">Optimize cover photos — ensure light backgrounds</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d6t3" onchange="updateProgress()">
+                        <label for="d6t3">TikTok #5: Easter collection showcase</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d6t4" onchange="updateProgress()">
+                        <label for="d6t4">Respond to any comments/messages on all platforms</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d6t5" onchange="updateProgress()">
+                        <label for="d6t5">Review Etsy analytics for early signals</label>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- DAY 7 -->
+            <div class="day-section">
+                <div class="day-header">
+                    <div>
+                        <div class="day-title">Day 7: Friday, April 3</div>
+                        <div class="day-date">Launch Checkpoint + Go-Live</div>
+                    </div>
+                    <div class="day-progress" id="day7-progress">0/5 tasks</div>
+                </div>
+                <ul class="checklist" id="day7-checklist">
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d7t1" onchange="updateProgress()">
+                        <label for="d7t1">Final listing push — fill any gaps</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d7t2" onchange="updateProgress()">
+                        <label for="d7t2">Schedule social posts for Conference weekend</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d7t3" onchange="updateProgress()">
+                        <label for="d7t3">Review pricing strategy</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d7t4" onchange="updateProgress()">
+                        <label for="d7t4">Set up Etsy ads ($1/day test budget)</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="d7t5" onchange="updateProgress()">
+                        <label for="d7t5">LAUNCH CHECK: 50+ listings live, social active, Pinterest pinned</label>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 4: 30-DAY SOCIAL CONTENT CALENDAR -->
+        <section class="section">
+            <h2>30-Day Social Content Calendar</h2>
+            <div class="card featured">
+                <p><strong>TikTok Strategy:</strong> The "13-year-old entrepreneur" + "AI art" + "cottagecore aesthetic" is a triple-threat niche. Age drives shares, AI drives curiosity, aesthetic drives saves.</p>
+            </div>
+            <div class="calendar-grid">
+                <div class="calendar-week">
+                    <h4>Week 1: Launch (March 28 — April 3)</h4>
+                    <ul>
+                        <li>"I'm 13 and started a business" story arc</li>
+                        <li>Design process reveals (Imagen 3 walkthrough)</li>
+                        <li>Room mockups with AI art</li>
+                        <li>Aesthetic grid teasers</li>
+                        <li>Pinterest board setup / pinning</li>
+                    </ul>
+                </div>
+                <div class="calendar-week">
+                    <h4>Week 2: Easter Push (April 4 — 10)</h4>
+                    <ul>
+                        <li>Easter collection launch</li>
+                        <li>Spring seasonal angle</li>
+                        <li>"Gift for her" framing</li>
+                        <li>Easter egg designs on TikTok</li>
+                        <li>General Conference community tie-in</li>
+                    </ul>
+                </div>
+                <div class="calendar-week">
+                    <h4>Week 3: Growth (April 11 — 17)</h4>
+                    <ul>
+                        <li>Customer mockups (AI-generated room scenes)</li>
+                        <li>Trending sounds + aesthetic overlays</li>
+                        <li>Best seller spotlight</li>
+                        <li>Collaborations / shoutouts</li>
+                        <li>User-generated content if any</li>
+                    </ul>
+                </div>
+                <div class="calendar-week">
+                    <h4>Week 4: Compound (April 18 — 24)</h4>
+                    <ul>
+                        <li>Best sellers deep dive</li>
+                        <li>Restock / new drops announcement</li>
+                        <li>Behind-the-scenes workflow</li>
+                        <li>Numbers reveal (if hitting goals)</li>
+                        <li>Next collection teases</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: PLATFORM SETUP GUIDES -->
+        <section class="section">
+            <h2>Platform Setup Guides — Quick Reference</h2>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4>Etsy</h4>
+                    <ul>
+                        <li>Account creation (age 18+ required)</li>
+                        <li>Shop setup with "Bloom Soft Co." name</li>
+                        <li>Logo upload + branding</li>
+                        <li>About section (brand story)</li>
+                        <li>Listing workflow (title, tags, description, images)</li>
+                        <li>Pricing: $0.20/listing + 6.5% transaction + 3% payment</li>
+                        <li>Link-in-bio to social accounts</li>
+                        <li>Ads setup ($1/day test budget)</li>
+                    </ul>
+                </div>
+                <div class="platform-card">
+                    <h4>Redbubble</h4>
+                    <ul>
+                        <li>Account creation (18+ or parental approval)</li>
+                        <li>Upload design files (high res PNG/PDF)</li>
+                        <li>Enable all products (posters, hoodies, mugs, etc.)</li>
+                        <li>Margin settings (recommend 20–30% markup)</li>
+                        <li>Auto-fulfillment (no inventory needed)</li>
+                        <li>Link to Etsy for cross-promotion</li>
+                    </ul>
+                </div>
+                <div class="platform-card">
+                    <h4>TikTok</h4>
+                    <ul>
+                        <li>Creator/business account setup</li>
+                        <li>Bio: "Cottagecore AI art | Etsy shop link"</li>
+                        <li>Profile picture (logo)</li>
+                        <li>Link-in-bio to Etsy shop</li>
+                        <li>First video: "I'm 13 and started..." (viral hook)</li>
+                        <li>Post 1–2 times daily (consistency = algorithm)</li>
+                        <li>Engage with comments (reply videos, duets)</li>
+                    </ul>
+                </div>
+                <div class="platform-card">
+                    <h4>Instagram</h4>
+                    <ul>
+                        <li>Business account (@bloomsoftco)</li>
+                        <li>Bio: "AI cottagecore wallpapers + prints | 13-year-old artist"</li>
+                        <li>Link to Etsy in bio</li>
+                        <li>Aesthetic grid (9 posts minimum for first impression)</li>
+                        <li>Stories daily (behind-the-scenes)</li>
+                        <li>Reels (10–15 sec design snippets)</li>
+                    </ul>
+                </div>
+                <div class="platform-card">
+                    <h4>Pinterest</h4>
+                    <ul>
+                        <li>Business account (NOT personal)</li>
+                        <li>Rich Pins enabled (auto-feeds product data from Etsy)</li>
+                        <li>Boards: "Wildflower Art", "Cottagecore", "Phone Wallpapers", "Easter"</li>
+                        <li>Pin every design to 3–4 relevant boards</li>
+                        <li>Use keywords in pin descriptions (cottagecore, AI art, etc.)</li>
+                        <li>Pinterest = long-tail traffic (pin today, sales in weeks)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: KEY METRICS TO TRACK -->
+        <section class="section">
+            <h2>Key Metrics — Weekly Tracking</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h4>Listings Live</h4>
+                    <div class="metric-value" id="metric-listings">0</div>
+                    <div class="metric-note">Target: 50+ by Day 7</div>
+                </div>
+                <div class="metric-card">
+                    <h4>Etsy Views</h4>
+                    <div class="metric-value" id="metric-etsy-views">—</div>
+                    <div class="metric-note">Target: 50–100/day by Week 1</div>
+                </div>
+                <div class="metric-card">
+                    <h4>Conversion Rate</h4>
+                    <div class="metric-value" id="metric-conversion">—</div>
+                    <div class="metric-note">Benchmark: 2–4% industry avg</div>
+                </div>
+                <div class="metric-card">
+                    <h4>Revenue (Net)</h4>
+                    <div class="metric-value" id="metric-revenue">$0</div>
+                    <div class="metric-note">After all fees</div>
+                </div>
+                <div class="metric-card">
+                    <h4>TikTok Views</h4>
+                    <div class="metric-value" id="metric-tiktok-views">—</div>
+                    <div class="metric-note">Goal: 10K+ on first viral</div>
+                </div>
+                <div class="metric-card">
+                    <h4>TikTok Followers</h4>
+                    <div class="metric-value" id="metric-tiktok-followers">0</div>
+                    <div class="metric-note">Target: 100+ by Day 7</div>
+                </div>
+                <div class="metric-card">
+                    <h4>Pinterest Impressions</h4>
+                    <div class="metric-value" id="metric-pinterest-impressions">—</div>
+                    <div class="metric-note">Long-tail traffic source</div>
+                </div>
+                <div class="metric-card">
+                    <h4>Top Listing</h4>
+                    <div class="metric-value" id="metric-top-listing">—</div>
+                    <div class="metric-note">Monitor weekly shifts</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHECKPOINT -->
+        <section class="section">
+            <div class="alert success">
+                <div class="alert-icon">✓</div>
+                <div class="alert-content">
+                    <p><strong>Sprint Philosophy:</strong> Move fast, ship often, optimize from data. By April 4, we'll know which designs resonate and which platforms drive traffic. Week 2 pivots based on Week 1 performance.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Bloom Soft Co. — GTM Sprint Plan</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">Last updated: March 28, 2026 | Checkboxes auto-save to memory (refresh doesn't persist — print to capture state)</p>
+        </footer>
+    </div>
+
+    <script>
+        // STATE MANAGEMENT
+        const state = {
+            checklist: {}
+        };
+
+        // INITIALIZE CHECKBOXES
+        function initializeCheckboxes() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                cb.addEventListener('change', (e) => {
+                    state.checklist[e.target.id] = e.target.checked;
+                    updateProgress();
+                });
+            });
+        }
+
+        // UPDATE PROGRESS
+        function updateProgress() {
+            const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+            const checkedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            const totalTasks = allCheckboxes.length;
+            const completedTasks = checkedCheckboxes.length;
+            const percentage = Math.round((completedTasks / totalTasks) * 100);
+
+            // Update progress bar
+            document.getElementById('progressFill').style.width = percentage + '%';
+            document.getElementById('progressPercent').textContent = percentage + '%';
+
+            // Update day counters
+            updateDayCounter('day1', 'd1t');
+            updateDayCounter('day2', 'd2t');
+            updateDayCounter('day3', 'd3t');
+            updateDayCounter('day4', 'd4t');
+            updateDayCounter('day5', 'd5t');
+            updateDayCounter('day6', 'd6t');
+            updateDayCounter('day7', 'd7t');
+        }
+
+        function updateDayCounter(dayId, prefix) {
+            const dayCheckboxes = [];
+            for (let i = 1; i <= 10; i++) {
+                const cb = document.getElementById(prefix + i);
+                if (cb) dayCheckboxes.push(cb);
+            }
+            const checked = dayCheckboxes.filter(cb => cb.checked).length;
+            const progressElement = document.getElementById(dayId + '-progress');
+            if (progressElement) {
+                progressElement.textContent = checked + '/' + dayCheckboxes.length + ' tasks';
+            }
+        }
+
+        // INITIALIZE ON LOAD
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeCheckboxes();
+            updateProgress();
+        });
+    </script>
+</body>
+</html>

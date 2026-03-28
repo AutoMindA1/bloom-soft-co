@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Chloe's TikTok Scripts</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #1a1a2e; color: #F8FBFF; overflow: hidden; height: 100vh; }
+
+        .scroll-container {
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .card {
+            height: 100vh;
+            scroll-snap-align: start;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .card-num {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 0.75rem;
+            color: #64748B;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background: rgba(245,185,200,0.2);
+            color: #F5B9C8;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            color: #C3A564;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .beat {
+            margin-bottom: 1rem;
+        }
+        .beat-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #B9D7F2;
+            margin-bottom: 0.25rem;
+        }
+        .beat-text {
+            font-size: 1.3rem;
+            line-height: 1.5;
+            color: #F8FBFF;
+        }
+        .beat-text em { color: #C3A564; font-style: normal; font-weight: 600; }
+        .beat-action {
+            font-size: 0.85rem;
+            color: #A5C6B2;
+            font-style: italic;
+            margin-top: 0.25rem;
+        }
+
+        .section-divider {
+            width: 40px;
+            height: 2px;
+            background: #C3A564;
+            margin: 0.75rem 0;
+        }
+
+        .meta-section {
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(185,215,242,0.15);
+        }
+        .meta-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #64748B;
+            margin-bottom: 0.25rem;
+            margin-top: 0.75rem;
+        }
+        .meta-copy {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 0.6rem 0.75rem;
+            font-size: 0.8rem;
+            color: #F8FBFF;
+            position: relative;
+            cursor: pointer;
+            -webkit-user-select: all;
+            user-select: all;
+        }
+        .meta-copy:active { background: rgba(165,198,178,0.2); }
+
+        .filming-tip {
+            font-size: 0.8rem;
+            color: #A5C6B2;
+            background: rgba(165,198,178,0.1);
+            border-radius: 10px;
+            padding: 0.6rem 0.75rem;
+        }
+
+        .scroll-hint {
+            position: fixed;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #64748B;
+            font-size: 0.7rem;
+            text-align: center;
+            animation: pulse 2s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes pulse { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+        /* Nav dots */
+        .dots {
+            position: fixed;
+            right: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 10;
+        }
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .dot.active { background: #C3A564; transform: scale(1.3); }
+    </style>
+</head>
+<body>
+
+<div class="dots" id="dots">
+    <div class="dot active" onclick="scrollTo(0)"></div>
+    <div class="dot" onclick="scrollTo(1)"></div>
+    <div class="dot" onclick="scrollTo(2)"></div>
+    <div class="dot" onclick="scrollTo(3)"></div>
+</div>
+
+<div class="scroll-container" id="scroller">
+
+<!-- SCRIPT 1: THE REVELATION HOOK -->
+<div class="card">
+    <div class="card-num">1 of 4</div>
+    <div class="card-tag">15-30 sec</div>
+    <h1>The Revelation Hook</h1>
+
+    <div class="beat">
+        <div class="beat-label">Hook (0-3 sec)</div>
+        <div class="beat-text">"Every Conference journal on Etsy gives you blank lines. Mine gives you a <em>REVELATION SYSTEM</em>."</div>
+    </div>
+
+    <div class="beat">
+        <div class="beat-label">Show (3-20 sec)</div>
+        <div class="beat-action">Quick flip-through of journal pages:</div>
+        <div class="beat-text">Show the D/I/P/W/T tag system. Pan across the pattern map. Quick glimpse of promise tracker. Show the 30-day calendar.</div>
+    </div>
+
+    <div class="beat">
+        <div class="beat-label">Punchline (20-28 sec)</div>
+        <div class="beat-text">"Conference isn't a 2-day event. It's a <em>30-day transformation</em>."</div>
+    </div>
+
+    <div class="beat">
+        <div class="beat-label">CTA (28-30 sec)</div>
+        <div class="beat-text">"Link in bio — <em>Bloom Soft Co.</em>"</div>
+    </div>
+
+    <div class="section-divider"></div>
+    <div class="meta-section">
+        <div class="meta-label">Caption (tap to select, then copy)</div>
+        <div class="meta-copy">I built a revelation system for General Conference and I'm kind of obsessed with it. It's not just a journal — it teaches you how to see what God is saying across all five sessions. Link in bio.</div>
+
+        <div class="meta-label">Hashtags</div>
+        <div class="meta-copy">#generalconference #ldsconference #conferencejournal #april2026 #conferenceprep #faithjournal #spiritualgrowth #revelationsystem #conferencenotes #latterdaysaint #faithprintable #bloomsoftco #etsyseller #digitaldownload #printablepdf</div>
+
+        <div class="meta-label">Filming Tip</div>
+        <div class="filming-tip">Film the flip-through overhead on a clean desk. Use natural light. Print the journal first — real paper looks 10x better than screenshots on screen.</div>
+    </div>
+</div>
+
+<!-- SCRIPT 2: THE FEELINGS PASSPORT -->
+<div class="card">
+    <div class="card-num">2 of 4</div>
+    <div class="card-tag">15-30 sec</div>
+    <h1>The Feelings Passport</h1>
+
+    <div class="beat">
+        <div class="beat-label">Hook (0-3 sec)</div>
+        <div class="beat-text">"I made a Conference passport for my little sister and she asked me <em>'What color is the Spirit?'</em>"</div>
+    </div>
+
+    <div class="beat">
+        <div class="beat-label">Show (3-22 sec)</div>
+        <div class="beat-action">Show the feelings pages in action:</div>
+        <div class="beat-text">Close-up of emotion circles. A kid drawing/coloring in the passport. Show color-matching section. Quick shot of kid engaged, smiling.</div>
+    </div>
+
+    <div class="beat">
+        <div class="beat-label">Punchline (22-28 sec)</div>
+        <div class="beat-text">"Most Conference packets ask kids what they HEARD. Ours asks what they <em>FELT</em>."</div>
+    </div>
+
+    <div class="beat">
+        <div class="beat-label">CTA (28-30 sec)</div>
+        <div class="beat-text">"Conference Passport — link in bio. <em>Bloom Soft Co.</em>"</div>
+    </div>
+
+    <div class="section-divider"></div>
+    <div class="meta-section">
+        <div class="meta-label">Caption</div>
+        <div class="meta-copy">I made a Conference passport that asks kids what they FELT instead of what they heard. Emotion circles, drawing spaces, stamps for every session, and a completion certificate. For ages 4-10 but honestly older kids want one too. Link in bio.</div>
+
+        <div class="meta-label">Hashtags</div>
+        <div class="meta-copy">#generalconference #conferencekids #ldschildren #conferenceactivity #kidsfaithjournal #conferencepassport #april2026 #churchkids #latterdaysaint #faithfamily #kidsactivity #bloomsoftco #etsyseller #digitaldownload #printablekids</div>
+
+        <div class="meta-label">Filming Tip</div>
+        <div class="filming-tip">If you can film a real kid using the passport, that's gold. Otherwise, film yourself flipping through the pages with crayons nearby. Keep it warm and real.</div>
+    </div>
+</div>
+
+<!-- SCRIPT 3: THE BUILD STORY -->
+<div class="card">
+    <div class="card-num">3 of 4</div>
+    <div class="card-tag">30-45 sec</div>
+    <h1>We Built This in 7 Days</h1>
+
+    <div class="beat">
+        <div class="beat-label">Hook (0-3 sec)</div>
+        <div class="beat-text">"I built an entire Conference product line in 7 days <em>using AI</em>."</div>
+    </div>
+
+    <div class="beat">
+        <div class="beat-label">Montage (3-35 sec)</div>
+        <div class="beat-action">Fast cuts:</div>
+        <div class="beat-text">Screen recording: designing spreads. Printing pages at home. Testing with family. Kid opening the passport (reaction shot). Adult reviewing the system. Quick product showcase: all products laid out.</div>
+    </div>
+
+    <div class="beat">
+        <div class="beat-label">Punchline (35-40 sec)</div>
+        <div class="beat-text">"Conference is this weekend. <em>We made sure your family is ready.</em>"</div>
+    </div>
+
+    <div class="beat">
+        <div class="beat-label">CTA (40-45 sec)</div>
+        <div class="beat-text">"<em>Bloom Soft Co.</em> — all products in bio."</div>
+    </div>
+
+    <div class="section-divider"></div>
+    <div class="meta-section">
+        <div class="meta-label">Caption</div>
+        <div class="meta-copy">I used AI to help me build a full Conference product line in one week. 6 products. 91+ pages of journals, activity books, and printables. I'm 16 and this is my first Etsy shop. Conference starts Saturday. Link in bio.</div>
+
+        <div class="meta-label">Hashtags</div>
+        <div class="meta-copy">#aiart #teenentrepreneur #etsyseller #generalconference #ldsconference #april2026 #sidehustle #digitalproducts #printablepdf #faithjournal #conferenceprep #bloomsoftco #smallbusiness #teenbusiness #firstetsyshop</div>
+
+        <div class="meta-label">Filming Tip</div>
+        <div class="filming-tip">This one needs energy. Quick cuts, upbeat music. Show your laptop screen, then the printed pages, then a real person holding them. Timestamp/date visible adds authenticity.</div>
+    </div>
+</div>
+
+<!-- SCRIPT 4: THE SHOP TOUR -->
+<div class="card">
+    <div class="card-num">4 of 4</div>
+    <div class="card-tag">25-30 sec</div>
+    <h1>The Shop Tour</h1>
+
+    <div class="beat">
+        <div class="beat-label">Hook (0-3 sec)</div>
+        <div class="beat-text">"I just opened my Etsy shop and I want to show you <em>everything</em>."</div>
+    </div>
+
+    <div class="beat">
+        <div class="beat-label">Tour (3-24 sec)</div>
+        <div class="beat-action">Screen record your Etsy shop. Show each product for ~3 sec:</div>
+        <div class="beat-text">"This is the Conference Journal — 21 pages of note-taking. This is the Revelation System — it tracks how God speaks to you. This is the Kids Passport — feelings-based, not answer-based. And these are the bundles — everything your family needs."</div>
+    </div>
+
+    <div class="beat">
+        <div class="beat-label">Close (24-30 sec)</div>
+        <div class="beat-text">"I made all of this. I'm <em>16</em>. And Conference is <em>this weekend</em>. Link in bio."</div>
+    </div>
+
+    <div class="section-divider"></div>
+    <div class="meta-section">
+        <div class="meta-label">Caption</div>
+        <div class="meta-copy">Just opened my first Etsy shop and it's all General Conference printables. Journals for adults, activity passports for kids, and bundles for the whole family. Everything is instant download. I made this. Link in bio.</div>
+
+        <div class="meta-label">Hashtags</div>
+        <div class="meta-copy">#etsyshoptour #newetsyshop #teenentrepreneur #generalconference #ldsconference #conferencejournal #conferencekids #printablepdf #april2026 #digitaldownload #faithfamily #bloomsoftco #smallbusiness #firstsale #etsyseller</div>
+
+        <div class="meta-label">Filming Tip</div>
+        <div class="filming-tip">Screen record your Etsy shop on your phone. Talk over it casually like you're showing a friend. Don't rehearse too much — genuine &gt; polished.</div>
+    </div>
+</div>
+
+</div>
+
+<div class="scroll-hint">swipe up for next script</div>
+
+<script>
+const scroller = document.getElementById('scroller');
+const dots = document.querySelectorAll('.dot');
+const cards = document.querySelectorAll('.card');
+
+function scrollTo(index) {
+    cards[index].scrollIntoView({ behavior: 'smooth' });
+}
+
+scroller.addEventListener('scroll', () => {
+    const scrollPos = scroller.scrollTop;
+    const cardHeight = window.innerHeight;
+    const active = Math.round(scrollPos / cardHeight);
+    dots.forEach((d, i) => d.classList.toggle('active', i === active));
+
+    // Hide scroll hint after first scroll
+    const hint = document.querySelector('.scroll-hint');
+    if (scrollPos > 50 && hint) hint.style.display = 'none';
+});
+</script>
+
+</body>
+</html>

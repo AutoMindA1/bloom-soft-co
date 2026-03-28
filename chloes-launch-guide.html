@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chloe's Launch Guide — Bloom Soft Co.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #FDF8F4; color: #323F5A; line-height: 1.7; }
+
+        .header {
+            background: linear-gradient(135deg, #F5B9C8 0%, #B9D7F2 50%, #A5C6B2 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .header h1 { font-family: 'Lora', serif; font-size: 2.2rem; color: #323F5A; margin-bottom: 0.5rem; }
+        .header p { font-size: 1.1rem; color: #323F5A; opacity: 0.8; max-width: 500px; margin: 0 auto; }
+
+        .container { max-width: 700px; margin: 0 auto; padding: 2rem; }
+
+        .encouragement {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(245,185,200,0.2);
+            border: 2px solid #F5B9C8;
+        }
+        .encouragement p { font-family: 'Lora', serif; font-size: 1.15rem; color: #323F5A; font-style: italic; }
+
+        .progress-bar-container {
+            background: #E8E0D8;
+            border-radius: 20px;
+            height: 16px;
+            margin: 2rem 0 1rem;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #F5B9C8, #A5C6B2);
+            border-radius: 20px;
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+        .progress-text { text-align: center; font-size: 0.9rem; color: #64748B; margin-bottom: 2rem; }
+
+        /* STEPS */
+        .step {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(50,63,90,0.06);
+            border-left: 5px solid #B9D7F2;
+        }
+        .step.done { opacity: 0.5; border-left-color: #A5C6B2; }
+        .step.done h2::after { content: " Done!"; color: #A5C6B2; font-size: 0.9rem; }
+
+        .step h2 {
+            font-family: 'Lora', serif;
+            font-size: 1.2rem;
+            color: #323F5A;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #F5B9C8, #B9D7F2);
+            color: white;
+            border-radius: 50%;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+        .step p { margin-bottom: 0.75rem; font-size: 0.95rem; }
+        .step .note { font-size: 0.85rem; color: #64748B; font-style: italic; margin-top: 0.5rem; }
+
+        /* COPY BOXES */
+        .copy-box {
+            background: #F8F5F1;
+            border: 1px dashed #D4C5B5;
+            border-radius: 12px;
+            padding: 1rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+            position: relative;
+            margin: 0.75rem 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            transition: background 0.2s;
+        }
+        .copy-box:hover { background: #F0EAE2; }
+        .copy-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #C3A564;
+            margin-bottom: 0.25rem;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: #323F5A;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 4px 10px;
+            font-size: 0.7rem;
+            cursor: pointer;
+        }
+        .copy-btn.copied { background: #A5C6B2; }
+
+        /* CHECKBOX */
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+        }
+        .check-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            accent-color: #A5C6B2;
+            flex-shrink: 0;
+        }
+
+        /* LISTING CARD */
+        .listing-card {
+            background: #FFFBF7;
+            border: 1px solid #E8E0D8;
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+        }
+        .listing-card h3 { font-family: 'Lora', serif; font-size: 1rem; margin-bottom: 0.25rem; }
+        .listing-price { font-weight: 700; color: #C3A564; font-size: 1.1rem; }
+        .listing-pdf { background: #F0FDF4; border-radius: 8px; padding: 0.5rem 0.75rem; font-size: 0.85rem; margin: 0.5rem 0; color: #166534; }
+        .listing-image { background: #EFF6FF; border-radius: 8px; padding: 0.5rem 0.75rem; font-size: 0.85rem; margin: 0.5rem 0; color: #1E40AF; }
+
+        .celebrate {
+            text-align: center;
+            padding: 3rem 2rem;
+            display: none;
+        }
+        .celebrate h2 { font-family: 'Lora', serif; font-size: 1.8rem; color: #C3A564; margin-bottom: 1rem; }
+        .celebrate p { font-size: 1.05rem; color: #323F5A; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Chloe's Launch Guide</h1>
+    <p>You're opening your first Etsy shop tonight. This guide walks you through every step. You've got this.</p>
+</div>
+
+<div class="container">
+
+<div class="encouragement">
+    <p>"The products are finished. The writing is done. All that's left is putting them on the shelf."</p>
+</div>
+
+<div class="progress-bar-container"><div class="progress-fill" id="progressFill"></div></div>
+<div class="progress-text" id="progressText">0 of 5 steps complete</div>
+
+<!-- ========== STEP 1 ========== -->
+<div class="step" id="step1">
+    <h2><span class="step-num">1</span> Create Your Etsy Shop</h2>
+    <p>This takes about 10 minutes. You're just setting up the store — no products yet.</p>
+
+    <div class="check-item"><input type="checkbox" class="tracker" data-step="1"><span>Go to <strong>etsy.com/sell</strong> and click "Get started"</span></div>
+    <div class="check-item"><input type="checkbox" class="tracker" data-step="1"><span>Language: English. Country: United States. Currency: USD.</span></div>
+    <div class="check-item"><input type="checkbox" class="tracker" data-step="1"><span>Shop name: <strong>BloomSoftCo</strong> (if taken, try <strong>BloomSoftShop</strong>)</span></div>
+    <div class="check-item"><input type="checkbox" class="tracker" data-step="1"><span>Enter payment info (where Etsy sends your money) and billing (how Etsy charges fees)</span></div>
+
+    <p class="note">That's it for setup. You now have a shop. It's empty, but it's yours.</p>
+</div>
+
+<!-- ========== STEP 2 ========== -->
+<div class="step" id="step2">
+    <h2><span class="step-num">2</span> Make Your Shop Look Good</h2>
+    <p>This takes about 5 minutes. Three things to paste in.</p>
+
+    <div class="check-item"><input type="checkbox" class="tracker" data-step="2"><span>Upload shop icon — use the <strong>bloom_logo_v4.png</strong> file in this folder</span></div>
+    <div class="check-item"><input type="checkbox" class="tracker" data-step="2"><span>Upload shop banner — use <strong>wallpaper1_petal_drift.png</strong> (Etsy will let you crop it)</span></div>
+    <div class="check-item"><input type="checkbox" class="tracker" data-step="2"><span>Paste this as your <strong>Shop Announcement</strong> (the short blurb visitors see first):</span></div>
+
+    <div class="copy-label">Shop Announcement</div>
+    <div class="copy-box" onclick="copyText(this)">Soft watercolor art for homes and hearts. Digital downloads you can print today. New designs every week. Welcome to Bloom Soft Co.<button class="copy-btn">Copy</button></div>
+
+    <div class="check-item"><input type="checkbox" class="tracker" data-step="2"><span>Go to Shop Manager &rarr; Settings &rarr; About &rarr; paste this as your <strong>About</strong> section:</span></div>
+
+    <div class="copy-label">About Section</div>
+    <div class="copy-box" onclick="copyText(this)">Bloom Soft Co. creates gentle, watercolor-inspired digital art and printables for families who love beauty and meaning. Every design is crafted with soft botanicals, wildflower palettes, and a cottagecore heart. We believe your walls, your journals, and your family moments deserve something beautiful. All products are instant-download PDFs and digital prints — ready to print at home or at your favorite print shop. Based in the US.<button class="copy-btn">Copy</button></div>
+</div>
+
+<!-- ========== STEP 3 ========== -->
+<div class="step" id="step3">
+    <h2><span class="step-num">3</span> Add Your 6 Products</h2>
+    <p>This is the big one — but every word is already written for you. For each product below, go to <strong>Listings &rarr; Add a listing</strong> and follow these steps:</p>
+
+    <div style="background: #F8F5F1; border-radius: 12px; padding: 1rem; margin-bottom: 1rem; font-size: 0.9rem;">
+        <strong>For every listing, set these the same:</strong><br>
+        Type: <strong>Digital</strong> | Who made it: <strong>I did</strong> | Finished product | Renewal: <strong>Automatic</strong><br>
+        Category: <strong>Paper & Party Supplies &rarr; Paper &rarr; Journals & Planners</strong><br>
+        Then paste the Title, Description, and Tags from the boxes below. Upload the PDF file. Upload the cover image from the <code>listing-images/</code> folder.
+    </div>
+
+    <!-- Product 1 -->
+    <div class="listing-card">
+        <div class="check-item"><input type="checkbox" class="tracker" data-step="3"><span><h3>1. General Conference Journal</h3></span></div>
+        <div class="listing-price">$7.99</div>
+        <div class="listing-pdf">Upload file: general-conference-journal-april-2026.pdf</div>
+        <div class="listing-image">Upload image: listing-images/general-conference-journal-april-2026-cover.png</div>
+
+        <div class="copy-label">Title</div>
+        <div class="copy-box" onclick="copyText(this)">General Conference Journal 2026 — Soft Watercolor Note-Taking Booklet | April Conference Printable PDF<button class="copy-btn">Copy</button></div>
+
+        <div class="copy-label">Description</div>
+        <div class="copy-box" onclick="copyText(this)">Capture every moment of spiritual insight during April 2026 General Conference. This 21-page note-taking journal is designed with reverent beauty—soft watercolor covers, thoughtful layouts, and plenty of space for personal revelation.
+
+Inside you'll find:
+- Pre-conference preparation pages to set your intentions
+- Five complete session note pages with speaker grids and reflection spaces
+- Post-conference study pages to deepen what you've learned
+- A dedicated testimony page to record your spiritual moments
+
+Perfect for anyone who wants to stay present and engaged, this instant-download PDF prints beautifully on your home printer. Bring it to Conference, or use it while watching at home—either way, you'll have a treasured keepsake of the messages that touched your heart this April.
+
+Bloom Soft Co. — Soft watercolor art for homes and hearts.<button class="copy-btn">Copy</button></div>
+
+        <div class="copy-label">Tags (paste all at once)</div>
+        <div class="copy-box" onclick="copyText(this)">general conference journal, conference notebook printable, lds conference 2026, general conference notes, conference study guide, april conference printable, watercolor conference journal, conference note taking, lds printable, conference preparation, scripture journal, church printable, faith journal<button class="copy-btn">Copy</button></div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="listing-card">
+        <div class="check-item"><input type="checkbox" class="tracker" data-step="3"><span><h3>2. Kids Activity Booklet</h3></span></div>
+        <div class="listing-price">$4.99</div>
+        <div class="listing-pdf">Upload file: general-conference-kids-activity-booklet-april-2026.pdf</div>
+        <div class="listing-image">Upload image: listing-images/general-conference-kids-activity-booklet-april-2026-cover.png</div>
+
+        <div class="copy-label">Title</div>
+        <div class="copy-box" onclick="copyText(this)">General Conference Kids Activity Booklet 2026 — Printable Games Coloring Pages | April Conference PDF<button class="copy-btn">Copy</button></div>
+
+        <div class="copy-label">Description</div>
+        <div class="copy-box" onclick="copyText(this)">Keep little ones engaged, learning, and reverent during General Conference. This 18-page activity booklet is filled with age-appropriate fun:
+
+- Conference Bingo
+- Word searches, mazes, and crossword puzzles
+- Speaker tracker to follow the sessions
+- "Draw What You Hear" pages that encourage listening and creativity
+- Scripture matching games and fill-in-the-blanks
+- Tally charts to follow themes across talks
+
+Designed for ages 4-10, this instant-download PDF helps kids connect meaningfully with Conference messages while staying happily occupied. Print at home, bring to sessions or watch parties, and watch your children discover their own spiritual moments.
+
+A gentle, joyful way to help the youngest members of your family feel part of something sacred.
+
+Bloom Soft Co. — Soft watercolor art for homes and hearts.<button class="copy-btn">Copy</button></div>
+
+        <div class="copy-label">Tags</div>
+        <div class="copy-box" onclick="copyText(this)">general conference kids, conference activity booklet, lds kids printable, conference bingo, general conference coloring, conference games kids, april conference printable, church activity kids, conference word search, lds activity page, conference packet kids, faith activity children, conference busy book<button class="copy-btn">Copy</button></div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="listing-card">
+        <div class="check-item"><input type="checkbox" class="tracker" data-step="3"><span><h3>3. Conference Revelation System (the premium one)</h3></span></div>
+        <div class="listing-price">$9.99</div>
+        <div class="listing-pdf">Upload file: conference-revelation-system-april-2026.pdf</div>
+        <div class="listing-image">Upload image: listing-images/conference-revelation-system-april-2026-cover.png</div>
+
+        <div class="copy-label">Title</div>
+        <div class="copy-box" onclick="copyText(this)">Conference Revelation System 2026 — 30-Day Spiritual Growth Journal | April General Conference Note-Taking + Promise Tracker PDF<button class="copy-btn">Copy</button></div>
+
+        <div class="copy-label">Description</div>
+        <div class="copy-box" onclick="copyText(this)">This isn't just a journal—it's a system for receiving personal revelation. While other journals give you blank lines, the Conference Revelation System teaches your heart how to listen, recognize, and act on what the Spirit is saying during General Conference.
+
+Here's what makes this different: You begin with a pre-conference spiritual inventory to set the stage. Then during each session, you'll tag every insight—Doctrine, Invitation, Promise, Warning, or Testimony—so you can see patterns emerge across all five sessions.
+
+After Conference, the cross-session pattern map shows you what themes appeared repeatedly, what the Spirit emphasized, and what your next 30 days look like.
+
+Inside the 30-page system:
+- Five full-session spreads with guided note-taking + reflection grids
+- A revelation pattern map to spot what God is saying across sessions
+- A prophetic promise tracker with checkpoints for your 30-day follow-up
+- A daily challenge calendar to keep the Conference spirit alive
+- Tear-out quote cards
+- A testimony page
+
+Print it at home or send to a print shop—either way, you'll have something beautiful that reflects how the Spirit moved during those days.
+
+Bloom Soft Co. — Revelation begins with listening.<button class="copy-btn">Copy</button></div>
+
+        <div class="copy-label">Tags</div>
+        <div class="copy-box" onclick="copyText(this)">general conference journal, conference revelation system, lds conference 2026, general conference notes, conference promise tracker, april conference printable, spiritual growth journal, conference study system, lds printable journal, conference preparation, 30 day spiritual challenge, faith journal printable, conference note taking<button class="copy-btn">Copy</button></div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="listing-card">
+        <div class="check-item"><input type="checkbox" class="tracker" data-step="3"><span><h3>4. Conference Passport (kids premium)</h3></span></div>
+        <div class="listing-price">$7.99</div>
+        <div class="listing-pdf">Upload file: conference-passport-kids-april-2026.pdf</div>
+        <div class="listing-image">Upload image: listing-images/conference-passport-kids-april-2026-cover.png</div>
+
+        <div class="copy-label">Title</div>
+        <div class="copy-box" onclick="copyText(this)">Conference Passport Kids Activity Book 2026 — Printable Feelings Journal + Games | April General Conference PDF Ages 4-10<button class="copy-btn">Copy</button></div>
+
+        <div class="copy-label">Description</div>
+        <div class="copy-box" onclick="copyText(this)">Conference just became an adventure. Every session is a destination your child visits, and this passport proves they were there.
+
+Most Conference packets for kids are just busy work—word searches, mazes, coloring pages. The Conference Passport is different. It's feelings-based, not answer-based. Instead of asking "What did the speaker say?" it asks "What did you feel?"
+
+Your child fills in emotion circles, draws what the Spirit looked like to them, collects stamps for each session, and builds their own spiritual story across the five days.
+
+Inside the 22-page passport:
+- A beautifully designed cover your child will carry with pride
+- A Conference journey map
+- Five session stamp pages where every talk gets a reflection moment
+- Feelings explorer pages with emotion circles and drawing spaces
+- Conference Bingo and a word search (because some fun is still fun)
+- A souvenir collection page
+- Character trading cards to share with friends
+- A promise bracelet template to wear home
+- A testimony page
+- A completion certificate that says "You did it."
+
+For kids ages 4-10, but honestly? Older siblings will want one too.
+
+Bloom Soft Co. — The Spirit speaks in colors.<button class="copy-btn">Copy</button></div>
+
+        <div class="copy-label">Tags</div>
+        <div class="copy-box" onclick="copyText(this)">conference passport kids, general conference kids, conference feelings journal, lds kids printable, conference activity booklet, conference stamp book, april conference kids, church activity children, conference emotions kids, lds activity page, conference busy book, faith activity children, conference packet kids<button class="copy-btn">Copy</button></div>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="listing-card">
+        <div class="check-item"><input type="checkbox" class="tracker" data-step="3"><span><h3>5. Family Revelation Bundle</h3></span></div>
+        <div class="listing-price">$14.99</div>
+        <div class="listing-pdf">Upload BOTH files: conference-revelation-system-april-2026.pdf AND conference-passport-kids-april-2026.pdf</div>
+        <div class="listing-image">Upload BOTH cover images from listing-images/ folder</div>
+
+        <div class="copy-label">Title</div>
+        <div class="copy-box" onclick="copyText(this)">General Conference Family Bundle 2026 — Revelation System + Kids Passport | April Conference Printable PDF<button class="copy-btn">Copy</button></div>
+
+        <div class="copy-label">Description</div>
+        <div class="copy-box" onclick="copyText(this)">The complete family Conference experience in one download. While adults are tracking revelation patterns and prophetic promises, the kids are on their own spiritual passport journey through the same five sessions.
+
+This bundle includes:
+- Conference Revelation System for adults (30 pages — revelation tagging, pattern mapping, promise tracking, and 30-day follow-up)
+- Conference Passport for kids (22 pages — feelings-based activities, stamps, character cards, and testimony work)
+
+That's 52 pages of meaningful Conference engagement—one download, instant access.
+
+After each session, sit down together and compare notes. What did Mom feel? What did the kids see? Where did the Spirit speak to each person in your family? You'll be amazed at how the same talk lands differently on a 7-year-old and a 35-year-old. That's revelation working.
+
+This bundle saves you $2.99 and keeps your whole family on the same spiritual page.
+
+Bloom Soft Co. — Conference as a family experience.<button class="copy-btn">Copy</button></div>
+
+        <div class="copy-label">Tags</div>
+        <div class="copy-box" onclick="copyText(this)">general conference bundle, conference family pack, lds conference printable, conference revelation kids, general conference 2026, family conference kit, april conference bundle, church family printable, conference notes kids, lds family activity, conference preparation bundle, faith family journal, conference packet family<button class="copy-btn">Copy</button></div>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="listing-card">
+        <div class="check-item"><input type="checkbox" class="tracker" data-step="3"><span><h3>6. Ultimate Conference Collection (the big one)</h3></span></div>
+        <div class="listing-price">$19.99</div>
+        <div class="listing-pdf">Upload ALL 4 PDF files</div>
+        <div class="listing-image">Upload all 4 cover images from listing-images/ folder</div>
+
+        <div class="copy-label">Title</div>
+        <div class="copy-box" onclick="copyText(this)">Ultimate General Conference Collection 2026 — Revelation System + Kids Passport + Standard Journal + Activity Booklet | April PDF Bundle<button class="copy-btn">Copy</button></div>
+
+        <div class="copy-label">Description</div>
+        <div class="copy-box" onclick="copyText(this)">Everything for Conference in one download. This mega bundle is for families with multiple children, for ward friends who want to gift something meaningful, or for anyone who wants every option available.
+
+Included:
+- Conference Revelation System (30 pages — revelation tagging, pattern mapping, promise tracking)
+- Conference Passport for kids (22 pages — feelings journal, stamps, character cards)
+- Standard Conference Journal (21 pages — classic note-taking for spouses or teens)
+- Kids Activity Booklet (18 pages — bonus games, crafts, and activities)
+
+That's 91 pages. One download. Print what you need, give away what you don't.
+
+The math: $32.96 value for $19.99. Peace of mind knowing every person in your family—from age 4 to grandparents—has something meaningful to carry through Conference.
+
+Bloom Soft Co. — The whole family prepared.<button class="copy-btn">Copy</button></div>
+
+        <div class="copy-label">Tags</div>
+        <div class="copy-box" onclick="copyText(this)">general conference mega bundle, conference complete collection, lds conference 2026, family conference pack, general conference printable set, april conference bundle, church family activity, conference journal collection, lds printable bundle, conference kids adults, faith family printable, conference preparation kit, general conference everything<button class="copy-btn">Copy</button></div>
+    </div>
+</div>
+
+<!-- ========== STEP 4 ========== -->
+<div class="step" id="step4">
+    <h2><span class="step-num">4</span> Turn On Ads</h2>
+    <p>This takes 2 minutes and gets your products in front of people searching for Conference printables.</p>
+
+    <div class="check-item"><input type="checkbox" class="tracker" data-step="4"><span>Go to <strong>Shop Manager &rarr; Marketing &rarr; Etsy Ads</strong></span></div>
+    <div class="check-item"><input type="checkbox" class="tracker" data-step="4"><span>Set daily budget to <strong>$5.00</strong></span></div>
+    <div class="check-item"><input type="checkbox" class="tracker" data-step="4"><span>Strategy: <strong>"Balance Orders with Returns"</strong></span></div>
+    <div class="check-item"><input type="checkbox" class="tracker" data-step="4"><span>Advertise: <strong>All listings</strong></span></div>
+
+    <p class="note">$5/day = $35 for the first week. If it's working, keep going. If not, Dad and Claude will adjust.</p>
+</div>
+
+<!-- ========== STEP 5 ========== -->
+<div class="step" id="step5">
+    <h2><span class="step-num">5</span> Tell People</h2>
+    <p>Your shop is live. Now let people know it exists.</p>
+
+    <div class="check-item"><input type="checkbox" class="tracker" data-step="5"><span>Share your Etsy shop link on your personal social media</span></div>
+    <div class="check-item"><input type="checkbox" class="tracker" data-step="5"><span>Text the link to family and friends who'd want Conference printables</span></div>
+    <div class="check-item"><input type="checkbox" class="tracker" data-step="5"><span>If you're comfortable: film a quick TikTok showing the products (script ideas are in the other files)</span></div>
+
+    <p class="note">You don't have to go viral. Even 5 sales this weekend is a real win for a brand new shop.</p>
+</div>
+
+<!-- ========== CELEBRATION ========== -->
+<div class="celebrate" id="celebrate">
+    <h2>You just launched a business.</h2>
+    <p>Bloom Soft Co. is live on Etsy. You built products, wrote listings, and put them in front of the world. That's not nothing — that's everything. Conference weekend is going to be good.</p>
+</div>
+
+</div>
+
+<script>
+// Copy functionality
+function copyText(el) {
+    // Get text content but exclude the button text
+    const btn = el.querySelector('.copy-btn');
+    const text = el.innerText.replace(btn ? btn.innerText : '', '').trim();
+    navigator.clipboard.writeText(text).then(() => {
+        if (btn) {
+            btn.textContent = 'Copied!';
+            btn.classList.add('copied');
+            setTimeout(() => {
+                btn.textContent = 'Copy';
+                btn.classList.remove('copied');
+            }, 1500);
+        }
+    });
+}
+
+// Progress tracking with localStorage
+const checkboxes = document.querySelectorAll('.tracker');
+const totalSteps = 5;
+
+function updateProgress() {
+    const stepsCompleted = new Set();
+    const stepCounts = {};
+    const stepTotals = {};
+
+    checkboxes.forEach(cb => {
+        const step = cb.dataset.step;
+        if (!stepTotals[step]) stepTotals[step] = 0;
+        if (!stepCounts[step]) stepCounts[step] = 0;
+        stepTotals[step]++;
+        if (cb.checked) stepCounts[step]++;
+    });
+
+    let completedSteps = 0;
+    for (let s = 1; s <= totalSteps; s++) {
+        const stepEl = document.getElementById('step' + s);
+        if (stepCounts[s] && stepCounts[s] === stepTotals[s]) {
+            completedSteps++;
+            stepEl.classList.add('done');
+        } else {
+            stepEl.classList.remove('done');
+        }
+    }
+
+    const pct = Math.round((completedSteps / totalSteps) * 100);
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressText').textContent = completedSteps + ' of ' + totalSteps + ' steps complete';
+
+    if (completedSteps === totalSteps) {
+        document.getElementById('celebrate').style.display = 'block';
+    } else {
+        document.getElementById('celebrate').style.display = 'none';
+    }
+}
+
+checkboxes.forEach((cb, i) => {
+    const key = 'chloe-launch-' + i;
+    cb.checked = localStorage.getItem(key) === 'true';
+    cb.addEventListener('change', () => {
+        localStorage.setItem(key, cb.checked);
+        updateProgress();
+    });
+});
+
+updateProgress();
+</script>
+
+</body>
+</html>

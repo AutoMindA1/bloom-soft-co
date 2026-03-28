@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom Soft Co. — Launch Tonight</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #F8FBFF; color: #323F5A; line-height: 1.6; padding: 2rem; }
+        h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 1.4rem; color: #C3A564; margin: 2rem 0 1rem; border-bottom: 2px solid #B9D7F2; padding-bottom: 0.5rem; }
+        h3 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: #323F5A; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .urgent { background: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1rem 1.5rem; border-radius: 8px; margin-bottom: 2rem; }
+        .urgent strong { color: #92400E; }
+
+        /* CHECKLIST */
+        .checklist { list-style: none; margin: 1rem 0; }
+        .checklist li { padding: 0.5rem 0; display: flex; align-items: flex-start; gap: 0.5rem; }
+        .checklist input[type="checkbox"] { margin-top: 4px; width: 18px; height: 18px; accent-color: #A5C6B2; }
+
+        /* LISTING CARDS */
+        .listing { background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(50,63,90,0.08); border-left: 4px solid #B9D7F2; }
+        .listing.premium { border-left-color: #C3A564; }
+        .listing.bundle { border-left-color: #A5C6B2; }
+        .listing h3 { margin-top: 0; }
+        .price { font-size: 1.3rem; font-weight: 700; color: #C3A564; margin: 0.5rem 0; }
+        .field-label { font-weight: 600; font-size: 0.85rem; color: #64748B; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 1rem; margin-bottom: 0.25rem; }
+        .copy-box { background: #F1F5F9; border: 1px solid #E2E8F0; border-radius: 8px; padding: 1rem; font-size: 0.9rem; position: relative; cursor: pointer; white-space: pre-wrap; word-wrap: break-word; }
+        .copy-box:hover { background: #E2E8F0; }
+        .copy-box::after { content: "Click to copy"; position: absolute; top: 0.5rem; right: 0.5rem; font-size: 0.7rem; color: #94A3B8; background: white; padding: 2px 8px; border-radius: 4px; }
+        .copy-box.copied::after { content: "Copied!"; color: #22C55E; }
+        .tags { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.5rem; }
+        .tag { background: #DBEAFE; color: #323F5A; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; }
+        .pdf-file { background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 8px; padding: 0.75rem 1rem; margin-top: 0.5rem; font-weight: 600; }
+
+        /* SETTINGS TABLE */
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th { background: #323F5A; color: white; padding: 0.75rem; text-align: left; }
+        td { padding: 0.75rem; border-bottom: 1px solid #E2E8F0; }
+        tr:nth-child(even) { background: #F8FBFF; }
+
+        .step-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: #C3A564; color: white; border-radius: 50%; font-weight: 700; font-size: 0.85rem; margin-right: 0.5rem; flex-shrink: 0; }
+
+        @media print { .copy-box::after { display: none; } body { padding: 0.5rem; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>Bloom Soft Co. — Launch Tonight</h1>
+<p>Conference starts March 30. Every listing below is paste-ready. Click any gray box to copy.</p>
+
+<div class="urgent">
+    <strong>DEADLINE:</strong> All 6 listings live by end of day March 28 or morning March 29. Etsy honeymoon visibility starts immediately on publish.
+</div>
+
+<!-- ============================================ -->
+<h2>STEP 1: Open Your Etsy Shop (~15 min)</h2>
+<!-- ============================================ -->
+
+<ul class="checklist">
+    <li><input type="checkbox"><span><span class="step-num">1</span> Go to <strong>etsy.com/sell</strong> &rarr; "Get started"</span></li>
+    <li><input type="checkbox"><span><span class="step-num">2</span> Shop preferences: Language = English, Country = United States, Currency = USD</span></li>
+    <li><input type="checkbox"><span><span class="step-num">3</span> Shop name: <strong>BloomSoftCo</strong> (no spaces, no special chars). Backup: <strong>BloomSoftShop</strong></span></li>
+    <li><input type="checkbox"><span><span class="step-num">4</span> Skip "Stock your shop" for now &mdash; we'll add listings next</span></li>
+    <li><input type="checkbox"><span><span class="step-num">5</span> Payment: Enter bank account for deposits</span></li>
+    <li><input type="checkbox"><span><span class="step-num">6</span> Billing: Enter credit card for Etsy fees ($0.20/listing + 6.5% transaction)</span></li>
+    <li><input type="checkbox"><span><span class="step-num">7</span> Shop announcement (paste this):</span></li>
+</ul>
+
+<div class="copy-box" onclick="copyText(this)">Soft watercolor art for homes and hearts. Digital downloads you can print today. New designs every week. Welcome to Bloom Soft Co.</div>
+
+<ul class="checklist">
+    <li><input type="checkbox"><span><span class="step-num">8</span> Upload shop icon: use <code>bloom_logo_v4.png</code> from this folder</span></li>
+    <li><input type="checkbox"><span><span class="step-num">9</span> Shop banner: use one of the wallpaper PNGs (<code>wallpaper1_petal_drift.png</code> works great &mdash; crop to 1200x300)</span></li>
+    <li><input type="checkbox"><span><span class="step-num">10</span> About section (paste this):</span></li>
+</ul>
+
+<div class="copy-box" onclick="copyText(this)">Bloom Soft Co. creates gentle, watercolor-inspired digital art and printables for families who love beauty and meaning. Every design is crafted with soft botanicals, wildflower palettes, and a cottagecore heart. We believe your walls, your journals, and your family moments deserve something beautiful. All products are instant-download PDFs and digital prints — ready to print at home or at your favorite print shop. Based in the US.</div>
+
+<!-- ============================================ -->
+<h2>STEP 2: Create Listings (copy/paste each one)</h2>
+<!-- ============================================ -->
+
+<p><strong>For each listing below:</strong> Etsy Dashboard &rarr; Listings &rarr; Add a listing &rarr; Digital product &rarr; paste Title, Description, Tags, set Price, upload PDF + listing images (screenshot pages from each PDF as images).</p>
+
+<h3>Etsy Settings for ALL Listings</h3>
+<table>
+    <tr><th>Setting</th><th>Value</th></tr>
+    <tr><td>Type</td><td>Digital</td></tr>
+    <tr><td>Category</td><td>Paper & Party Supplies &rarr; Paper &rarr; Journals & Planners (or Books, Movies & Music &rarr; Books &rarr; Blank Books for journals)</td></tr>
+    <tr><td>Renewal</td><td>Automatic</td></tr>
+    <tr><td>Who made it?</td><td>I did</td></tr>
+    <tr><td>What is it?</td><td>A finished product</td></tr>
+    <tr><td>When was it made?</td><td>2020-2026</td></tr>
+    <tr><td>Digital file format</td><td>PDF</td></tr>
+    <tr><td>Quantity</td><td>999 (digital = unlimited)</td></tr>
+    <tr><td>Processing time</td><td>Instant download</td></tr>
+</table>
+
+<!-- LISTING 1 -->
+<div class="listing">
+    <h3>LISTING 1: Standard Conference Journal</h3>
+    <div class="price">$7.99</div>
+    <div class="pdf-file">Upload: general-conference-journal-april-2026.pdf</div>
+
+    <div class="field-label">Title (paste exactly)</div>
+    <div class="copy-box" onclick="copyText(this)">General Conference Journal 2026 — Soft Watercolor Note-Taking Booklet | April Conference Printable PDF</div>
+
+    <div class="field-label">Description (paste exactly)</div>
+    <div class="copy-box" onclick="copyText(this)">Capture every moment of spiritual insight during April 2026 General Conference. This 21-page note-taking journal is designed with reverent beauty—soft watercolor covers, thoughtful layouts, and plenty of space for personal revelation.
+
+Inside you'll find:
+- Pre-conference preparation pages to set your intentions
+- Five complete session note pages with speaker grids and reflection spaces
+- Post-conference study pages to deepen what you've learned
+- A dedicated testimony page to record your spiritual moments
+
+Perfect for anyone who wants to stay present and engaged, this instant-download PDF prints beautifully on your home printer. Bring it to Conference, or use it while watching at home—either way, you'll have a treasured keepsake of the messages that touched your heart this April.
+
+Bloom Soft Co. — Soft watercolor art for homes and hearts.</div>
+
+    <div class="field-label">Tags (paste into tag field, comma-separated)</div>
+    <div class="copy-box" onclick="copyText(this)">general conference journal, conference notebook printable, lds conference 2026, general conference notes, conference study guide, april conference printable, watercolor conference journal, conference note taking, lds printable, conference preparation, scripture journal, church printable, faith journal</div>
+</div>
+
+<!-- LISTING 2 -->
+<div class="listing">
+    <h3>LISTING 2: Kids Activity Booklet</h3>
+    <div class="price">$4.99</div>
+    <div class="pdf-file">Upload: general-conference-kids-activity-booklet-april-2026.pdf</div>
+
+    <div class="field-label">Title</div>
+    <div class="copy-box" onclick="copyText(this)">General Conference Kids Activity Booklet 2026 — Printable Games Coloring Pages | April Conference PDF</div>
+
+    <div class="field-label">Description</div>
+    <div class="copy-box" onclick="copyText(this)">Keep little ones engaged, learning, and reverent during General Conference. This 18-page activity booklet is filled with age-appropriate fun:
+
+- Conference Bingo
+- Word searches, mazes, and crossword puzzles
+- Speaker tracker to follow the sessions
+- "Draw What You Hear" pages that encourage listening and creativity
+- Scripture matching games and fill-in-the-blanks
+- Tally charts to follow themes across talks
+
+Designed for ages 4-10, this instant-download PDF helps kids connect meaningfully with Conference messages while staying happily occupied. Print at home, bring to sessions or watch parties, and watch your children discover their own spiritual moments.
+
+A gentle, joyful way to help the youngest members of your family feel part of something sacred.
+
+Bloom Soft Co. — Soft watercolor art for homes and hearts.</div>
+
+    <div class="field-label">Tags</div>
+    <div class="copy-box" onclick="copyText(this)">general conference kids, conference activity booklet, lds kids printable, conference bingo, general conference coloring, conference games kids, april conference printable, church activity kids, conference word search, lds activity page, conference packet kids, faith activity children, conference busy book</div>
+</div>
+
+<!-- LISTING 3 -->
+<div class="listing premium">
+    <h3>LISTING 3: Conference Revelation System (PREMIUM)</h3>
+    <div class="price">$9.99</div>
+    <div class="pdf-file">Upload: conference-revelation-system-april-2026.pdf</div>
+
+    <div class="field-label">Title</div>
+    <div class="copy-box" onclick="copyText(this)">Conference Revelation System 2026 — 30-Day Spiritual Growth Journal | April General Conference Note-Taking + Promise Tracker PDF</div>
+
+    <div class="field-label">Description</div>
+    <div class="copy-box" onclick="copyText(this)">This isn't just a journal—it's a system for receiving personal revelation. While other journals give you blank lines, the Conference Revelation System teaches your heart how to listen, recognize, and act on what the Spirit is saying during General Conference.
+
+Here's what makes this different: You begin with a pre-conference spiritual inventory to set the stage. Then during each session, you'll tag every insight—Doctrine, Invitation, Promise, Warning, or Testimony—so you can see patterns emerge across all five sessions. The revelation type tags aren't busywork; they're a language for understanding how God speaks personally to you.
+
+After Conference, the cross-session pattern map shows you what themes appeared repeatedly, what the Spirit emphasized, and what your next 30 days look like.
+
+Inside the 30-page system:
+- Five full-session spreads with guided note-taking + reflection grids
+- A revelation pattern map to spot what God is saying across sessions
+- A prophetic promise tracker with checkpoints for your 30-day follow-up
+- A daily challenge calendar to keep the Conference spirit alive
+- Tear-out quote cards
+- A testimony page
+
+Print it at home or send to a print shop—either way, you'll have something beautiful that reflects how the Spirit moved during those days.
+
+This is for anyone who's ever sat in Conference and thought, "I know God is speaking, but how do I hold onto it?" The answer isn't more notes. It's a system. Because when you can see the pattern, you can trust the path.
+
+Start before Conference opens. Let this journal become the bridge between hearing and receiving.
+
+Bloom Soft Co. — Revelation begins with listening.</div>
+
+    <div class="field-label">Tags</div>
+    <div class="copy-box" onclick="copyText(this)">general conference journal, conference revelation system, lds conference 2026, general conference notes, conference promise tracker, april conference printable, spiritual growth journal, conference study system, lds printable journal, conference preparation, 30 day spiritual challenge, faith journal printable, conference note taking</div>
+</div>
+
+<!-- LISTING 4 -->
+<div class="listing premium">
+    <h3>LISTING 4: Conference Passport (Kids Premium)</h3>
+    <div class="price">$7.99</div>
+    <div class="pdf-file">Upload: conference-passport-kids-april-2026.pdf</div>
+
+    <div class="field-label">Title</div>
+    <div class="copy-box" onclick="copyText(this)">Conference Passport Kids Activity Book 2026 — Printable Feelings Journal + Games | April General Conference PDF Ages 4-10</div>
+
+    <div class="field-label">Description</div>
+    <div class="copy-box" onclick="copyText(this)">Conference just became an adventure. Every session is a destination your child visits, and this passport proves they were there.
+
+Most Conference packets for kids are just busy work—word searches, mazes, coloring pages. The Conference Passport is different. It's feelings-based, not answer-based. Instead of asking "What did the speaker say?" it asks "What did you feel?"
+
+Your child fills in emotion circles, draws what the Spirit looked like to them, collects stamps for each session, and builds their own spiritual story across the five days.
+
+Inside the 22-page passport:
+- A beautifully designed cover your child will carry with pride
+- A Conference journey map
+- Five session stamp pages where every talk gets a reflection moment
+- Feelings explorer pages with emotion circles and drawing spaces
+- Conference Bingo and a word search (because some fun is still fun)
+- A souvenir collection page
+- Character trading cards to share with friends
+- A promise bracelet template to wear home
+- A testimony page
+- A completion certificate that says "You did it."
+
+Kids don't think in bullets and key words. They think in colors, feelings, and stories. When a child finishes this passport, they won't have a list of Conference notes. They'll have a journal of what it felt like when the Spirit spoke to them.
+
+For kids ages 4-10, but honestly? Older siblings will want one too.
+
+Bloom Soft Co. — The Spirit speaks in colors.</div>
+
+    <div class="field-label">Tags</div>
+    <div class="copy-box" onclick="copyText(this)">conference passport kids, general conference kids, conference feelings journal, lds kids printable, conference activity booklet, conference stamp book, april conference kids, church activity children, conference emotions kids, lds activity page, conference busy book, faith activity children, conference packet kids</div>
+</div>
+
+<!-- LISTING 5 -->
+<div class="listing bundle">
+    <h3>LISTING 5: Family Revelation Bundle</h3>
+    <div class="price">$14.99</div>
+    <div class="pdf-file">Upload: conference-revelation-system-april-2026.pdf + conference-passport-kids-april-2026.pdf (both files)</div>
+
+    <div class="field-label">Title</div>
+    <div class="copy-box" onclick="copyText(this)">General Conference Family Bundle 2026 — Revelation System + Kids Passport | April Conference Printable PDF</div>
+
+    <div class="field-label">Description</div>
+    <div class="copy-box" onclick="copyText(this)">The complete family Conference experience in one download. While adults are tracking revelation patterns and prophetic promises, the kids are on their own spiritual passport journey through the same five sessions.
+
+This bundle includes:
+- Conference Revelation System for adults (30 pages — revelation tagging, pattern mapping, promise tracking, and 30-day follow-up)
+- Conference Passport for kids (22 pages — feelings-based activities, stamps, character cards, and testimony work)
+
+That's 52 pages of meaningful Conference engagement—one download, instant access.
+
+Here's the magic: After each session, sit down together and compare notes. What did Mom feel? What did the kids see? Where did the Spirit speak to each person in your family? You'll be amazed at how the same talk lands differently on a 7-year-old and a 35-year-old. That's revelation working.
+
+This bundle saves you $2.99 and keeps your whole family on the same spiritual page.
+
+Bloom Soft Co. — Conference as a family experience.</div>
+
+    <div class="field-label">Tags</div>
+    <div class="copy-box" onclick="copyText(this)">general conference bundle, conference family pack, lds conference printable, conference revelation kids, general conference 2026, family conference kit, april conference bundle, church family printable, conference notes kids, lds family activity, conference preparation bundle, faith family journal, conference packet family</div>
+</div>
+
+<!-- LISTING 6 -->
+<div class="listing bundle">
+    <h3>LISTING 6: Ultimate Conference Collection (MEGA)</h3>
+    <div class="price">$19.99</div>
+    <div class="pdf-file">Upload ALL 4 PDFs: general-conference-journal-april-2026.pdf + general-conference-kids-activity-booklet-april-2026.pdf + conference-revelation-system-april-2026.pdf + conference-passport-kids-april-2026.pdf</div>
+
+    <div class="field-label">Title</div>
+    <div class="copy-box" onclick="copyText(this)">Ultimate General Conference Collection 2026 — Revelation System + Kids Passport + Standard Journal + Activity Booklet | April PDF Bundle</div>
+
+    <div class="field-label">Description</div>
+    <div class="copy-box" onclick="copyText(this)">Everything for Conference in one download. This mega bundle is for families with multiple children, for ward friends who want to gift something meaningful, or for anyone who wants every option available.
+
+Included:
+- Conference Revelation System (30 pages — revelation tagging, pattern mapping, promise tracking)
+- Conference Passport for kids (22 pages — feelings journal, stamps, character cards)
+- Standard Conference Journal (21 pages — classic note-taking for spouses or teens)
+- Kids Activity Booklet (18 pages — bonus games, crafts, and activities)
+
+That's 91 pages. One download. Print what you need, give away what you don't.
+
+The math: $32.96 value for $19.99. You're getting peace of mind knowing every person in your family—from age 4 to grandparents—has something meaningful to carry through Conference.
+
+Bloom Soft Co. — The whole family prepared.</div>
+
+    <div class="field-label">Tags</div>
+    <div class="copy-box" onclick="copyText(this)">general conference mega bundle, conference complete collection, lds conference 2026, family conference pack, general conference printable set, april conference bundle, church family activity, conference journal collection, lds printable bundle, conference kids adults, faith family printable, conference preparation kit, general conference everything</div>
+</div>
+
+<!-- ============================================ -->
+<h2>STEP 3: Listing Images (from your existing PDFs)</h2>
+<!-- ============================================ -->
+
+<p>For each listing, you need 3-5 images. The fastest path:</p>
+
+<ul class="checklist">
+    <li><input type="checkbox"><span><span class="step-num">1</span> Open each PDF in Preview (Mac)</span></li>
+    <li><input type="checkbox"><span><span class="step-num">2</span> File &rarr; Export &rarr; PNG &rarr; Resolution: 300 DPI</span></li>
+    <li><input type="checkbox"><span><span class="step-num">3</span> Export the <strong>cover page</strong> (Image 1 — this is your thumbnail)</span></li>
+    <li><input type="checkbox"><span><span class="step-num">4</span> Export <strong>2-3 interior pages</strong> that show the best content (Image 2-4)</span></li>
+    <li><input type="checkbox"><span><span class="step-num">5</span> Upload all exported PNGs as listing photos in Etsy</span></li>
+</ul>
+
+<h3>Which Pages to Export Per Product</h3>
+<table>
+    <tr><th>Product</th><th>Image 1 (Cover)</th><th>Image 2</th><th>Image 3</th><th>Image 4</th></tr>
+    <tr><td>Conference Journal</td><td>Page 1 (cover)</td><td>Session notes spread</td><td>Prep page</td><td>Testimony page</td></tr>
+    <tr><td>Kids Activity Booklet</td><td>Page 1 (cover)</td><td>Bingo page</td><td>Draw What You Hear</td><td>Word search</td></tr>
+    <tr><td>Revelation System</td><td>Page 1 (cover)</td><td>Revelation tag spread</td><td>Pattern map</td><td>30-day calendar</td></tr>
+    <tr><td>Conference Passport</td><td>Page 1 (cover)</td><td>Session stamp page</td><td>Feelings explorer</td><td>Trading cards</td></tr>
+    <tr><td>Family Bundle</td><td>Both covers side-by-side*</td><td>Adult interior</td><td>Kids interior</td><td>—</td></tr>
+    <tr><td>Ultimate Collection</td><td>All 4 covers arranged*</td><td>Best adult page</td><td>Best kids page</td><td>—</td></tr>
+</table>
+<p><em>*For bundles: screenshot covers together in Preview or use a simple Canva collage.</em></p>
+
+<!-- ============================================ -->
+<h2>STEP 4: Turn On Ads (~2 min)</h2>
+<!-- ============================================ -->
+
+<ul class="checklist">
+    <li><input type="checkbox"><span><span class="step-num">1</span> Etsy Dashboard &rarr; Marketing &rarr; Etsy Ads</span></li>
+    <li><input type="checkbox"><span><span class="step-num">2</span> Daily budget: <strong>$5.00</strong></span></li>
+    <li><input type="checkbox"><span><span class="step-num">3</span> Strategy: <strong>"Balance Orders with Returns"</strong></span></li>
+    <li><input type="checkbox"><span><span class="step-num">4</span> Advertise: <strong>All listings</strong> (let Etsy distribute evenly)</span></li>
+    <li><input type="checkbox"><span><span class="step-num">5</span> Review after 3 days &mdash; pause anything with &lt;1% CTR</span></li>
+</ul>
+
+<!-- ============================================ -->
+<h2>STEP 5: Post-Launch Checklist</h2>
+<!-- ============================================ -->
+
+<ul class="checklist">
+    <li><input type="checkbox"><span>Set up Etsy auto-reply message: "Thank you for your purchase! Your PDF is ready to download. Print at home (color, double-sided recommended) or send to a print shop for premium feel. We'd love a review when you're done! — Bloom Soft Co."</span></li>
+    <li><input type="checkbox"><span>Share shop link to personal social media</span></li>
+    <li><input type="checkbox"><span>Film TikTok Script 1 tonight: "Every Conference journal on Etsy gives you blank lines. Mine gives you a REVELATION SYSTEM."</span></li>
+    <li><input type="checkbox"><span>Share in ward/stake group chats (if appropriate)</span></li>
+    <li><input type="checkbox"><span>Check Etsy stats tomorrow morning for impressions/clicks</span></li>
+</ul>
+
+<!-- ============================================ -->
+<h2>Revenue Model</h2>
+<!-- ============================================ -->
+
+<table>
+    <tr><th>Product</th><th>Price</th><th>Net After Fees</th><th>If 10 Sales</th></tr>
+    <tr><td>Conference Journal</td><td>$7.99</td><td>$6.02</td><td>$60.20</td></tr>
+    <tr><td>Kids Activity Booklet</td><td>$4.99</td><td>$3.72</td><td>$37.20</td></tr>
+    <tr><td>Revelation System</td><td>$9.99</td><td>$7.55</td><td>$75.50</td></tr>
+    <tr><td>Conference Passport</td><td>$7.99</td><td>$6.02</td><td>$60.20</td></tr>
+    <tr><td>Family Bundle</td><td>$14.99</td><td>$11.41</td><td>$114.10</td></tr>
+    <tr><td>Ultimate Collection</td><td>$19.99</td><td>$15.24</td><td>$152.40</td></tr>
+    <tr><th colspan="3">Total if 10 sales each (60 sales)</th><th>$499.60</th></tr>
+</table>
+
+</div>
+
+<script>
+function copyText(el) {
+    const text = el.innerText || el.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+        el.classList.add('copied');
+        setTimeout(() => el.classList.remove('copied'), 1500);
+    });
+}
+
+// Save checklist state to localStorage
+document.querySelectorAll('input[type="checkbox"]').forEach((cb, i) => {
+    const key = 'bloom-launch-' + i;
+    cb.checked = localStorage.getItem(key) === 'true';
+    cb.addEventListener('change', () => localStorage.setItem(key, cb.checked));
+});
+</script>
+</body>
+</html>
