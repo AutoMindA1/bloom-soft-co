@@ -1,6 +1,6 @@
 const CACHE_NAME = "bloom-soft-v1";
 
-const PRECACHE_URLS = ["/", "/index.html"];
+const PRECACHE_URLS = ["/bloom-soft-co/", "/bloom-soft-co/index.html"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
