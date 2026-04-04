@@ -4,6 +4,99 @@
   box-sizing: border-box;
 }
 
+html {
+  /* Prevent iOS rubber-band overscroll showing white */
+  background: #323f5a;
+}
+
 body {
   margin: 0;
+  /* Prevent text selection on tap (feels native) */
+  -webkit-user-select: none;
+  user-select: none;
+  /* Prevent pull-to-refresh in standalone mode */
+  overscroll-behavior-y: contain;
+  /* Smooth scrolling */
+  -webkit-overflow-scrolling: touch;
+  /* Safe area insets for notched iPhones */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+/* Remove tap highlight on iOS */
+button,
+div[role="button"],
+[onclick] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth momentum scrolling for all scrollable containers */
+[style*="overflow"] {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent zoom on input focus (iOS) */
+input,
+select,
+textarea {
+  font-size: 16px;
+}
+
+/* Animation keyframes for the app */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes progressFill {
+  from {
+    width: 0%;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
 }

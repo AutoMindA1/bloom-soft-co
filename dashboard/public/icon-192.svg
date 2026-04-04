@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <rect width="192" height="192" rx="38" fill="#323F5A"/>
+  <circle cx="96" cy="82" r="42" fill="none" stroke="#F5B9C8" stroke-width="3" opacity="0.5"/>
+  <circle cx="96" cy="82" r="28" fill="none" stroke="#A5C6B2" stroke-width="3" opacity="0.6"/>
+  <circle cx="96" cy="82" r="14" fill="#C3A564" opacity="0.8"/>
+  <g transform="translate(96,78)">
+    <path d="M0-8 C3-4 6 0 4 4 C2 7 -2 7 -4 4 C-6 0 -3-4 0-8Z" fill="#F5B9C8"/>
+    <path d="M0-8 C-4-3 -8 2 -5 6 C-3 8 1 6 0 3 C-1 0 -2-4 0-8Z" fill="#A5C6B2" opacity="0.8"/>
+    <path d="M0-8 C5-2 8 4 5 7 C3 9 -1 7 0 4 C1 1 3-3 0-8Z" fill="#B9D7F2" opacity="0.7"/>
+  </g>
+  <text x="96" y="148" text-anchor="middle" font-family="Georgia, serif" font-size="18" font-weight="700" fill="#F8FBFF" letter-spacing="1">BLOOM</text>
+  <text x="96" y="166" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#C3A564" letter-spacing="2">SOFT CO</text>
+</svg>
