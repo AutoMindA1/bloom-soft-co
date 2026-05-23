@@ -86,6 +86,20 @@ Defined in both `scripts/generate-kids-passport.py` and `scripts/generate-revela
 
 The authoritative document is `bloom_soft_co_brand_guidelines.pdf` (LFS) — if it disagrees with these constants, the guidelines win and the scripts need updating.
 
+## Ideation workflow
+
+For throwaway experiments — new product ideas, copy drafts, prompt riffs that may or may not survive — use `scripts/ideate.sh`:
+
+```bash
+scripts/ideate.sh start <name>   # branch ideate/<name> off origin/main
+# ...commit freely on the branch...
+scripts/ideate.sh keep           # push + open draft PR
+scripts/ideate.sh trash          # delete branch local + remote (PERMANENT, prompts to confirm)
+scripts/ideate.sh list           # show all ideate/* branches
+```
+
+Anything on an `ideate/*` branch is provisional. `trash` makes the commits unreachable and lets git GC reclaim them — treat it as gone. Use `keep` the moment something is worth saving.
+
 ## What there is not
 
 - No test suite, no linter, no CI, no package.json, no build system. Don't invent one.
